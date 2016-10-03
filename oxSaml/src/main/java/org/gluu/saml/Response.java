@@ -163,8 +163,8 @@ public class Response {
 			for (int j = 0; j < nameChildNodes.getLength(); j++) {
 				Node nameChildNode = nameChildNodes.item(j);
 
-				if (nameChildNode.getNamespaceURI().equalsIgnoreCase("urn:oasis:names:tc:SAML:2.0:assertion")
-						&& nameChildNode.getLocalName().equals("AttributeValue")) {
+				if (nameChildNode.getNamespaceURI() != null && nameChildNode.getNamespaceURI().equalsIgnoreCase("urn:oasis:names:tc:SAML:2.0:assertion")
+						&& nameChildNode.getLocalName() != null && nameChildNode.getLocalName().equals("AttributeValue")) {
 					NodeList valueChildNodes = nameChildNode.getChildNodes();
 					for (int k = 0; k < valueChildNodes.getLength(); k++) {
 						Node valueChildNode = valueChildNodes.item(k);
